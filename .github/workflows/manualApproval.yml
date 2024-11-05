@@ -12,11 +12,11 @@ on:
 
 jobs:
 
-  main-job-${{ github.event.inputs.bucket }}/${{ github.event.inputs.file_path }}:
+  main-job:
     runs-on: ubuntu-latest
     environment: rm_last_used_version
     steps:
 
-      - name: Afficher les détails de l'objet S3
+      - name: Afficher les détails de l'objet S3-${{ github.event.inputs.bucket }}/${{ github.event.inputs.file_path }}
         run: |
           echo "Approuved"
