@@ -11,22 +11,10 @@ on:
         required: true
 
 jobs:
-  wait-for-approval:
-    runs-on: ubuntu-latest
-    outputs:
-      approved: ${{ steps.approve.outputs.approved }}
-    steps:
-      - name: Demande d'approbation
-        id: approve
-        run: |
-          echo "::notice::En attente d'approbation. Veuillez approuver manuellement."
-          sleep 30  # Ajoute un délai d'attente manuel pour faciliter l'approbation
-
 
   main-job:
     runs-on: ubuntu-latest
-    needs: wait-for-approval
-    if: needs.wait-for-approval.result == 'success'
+    environment: rm_last_used_version
     steps:
 
       - name: Afficher les détails de l'objet S3
