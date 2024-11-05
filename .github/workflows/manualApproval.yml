@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "::notice::En attente d'approbation. Veuillez approuver manuellement."
           sleep 30  # Ajoute un délai d'attente manuel pour faciliter l'approbation
-        continue-on-error: true
+
 
   main-job:
     runs-on: ubuntu-latest
