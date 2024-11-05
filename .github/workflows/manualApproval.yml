@@ -10,6 +10,15 @@ on:
         description: 'Chemin du fichier dans le bucket S3'
         required: true
 
+env:
+  Week: |
+    Monday: 1
+    Tuesday: 2
+    Wednesday: 3
+    Thursday: 4
+    Friday: 5
+
+
 jobs:
 
   main-job:
@@ -20,3 +29,4 @@ jobs:
       - name: Afficher les détails de l'objet S3-${{ github.event.inputs.bucket }}/${{ github.event.inputs.file_path }}
         run: |
           echo "Approuved"
+          echo ${{ env.week }}
