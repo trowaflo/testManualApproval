@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  main-job:
+  main-job-${{ github.event.inputs.bucket }}/${{ github.event.inputs.file_path }}:
     runs-on: ubuntu-latest
     environment: rm_last_used_version
     steps:
